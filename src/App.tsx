@@ -1,7 +1,9 @@
 import ExpenseFilter from "./expense-tracker/components/ExpenseFilter";
 import ExpenseList from "./expense-tracker/components/ExpenseList";
-import ItemForm from "./expense-tracker/components/ItemFrom";
+import ExpenseForm from "./expense-tracker/components/ExpenseForm";
 import { useState } from 'react'
+
+export const ExpensesCategories = ['Groceries', 'Utilities', 'Entertainment'] as const;
 
 function App(){
 
@@ -18,9 +20,9 @@ function App(){
 
   return(
     <div>
+      <ExpenseForm />
       <ExpenseFilter onSelectCategory={category => setSelectedCategory(category)} />
       <ExpenseList Expenses={visibleExpenses} onDelete={(id) => setExpense(expense.filter(e => e.id != id))} />
-      <ItemForm />
     </div>
     
   )
