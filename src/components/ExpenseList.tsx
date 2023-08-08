@@ -19,7 +19,7 @@ function ExpenseList({Expenses, onDelete}: Props){
     const [price, setPrice] = useState(0);
 
 
-    
+    if(Expenses.length == 0) return null
     return(
         <table className="table table-border">
             <thead>
