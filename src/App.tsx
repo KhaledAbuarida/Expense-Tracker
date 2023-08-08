@@ -10,7 +10,7 @@ function App(){
   const [expenses, setExpenses] = useState([
     {id:3, description: 'ccc', price: 10, quantity:13, category: 'Utilities'},
     {id:1, description: 'aaa', price: 10, quantity:13, category: 'Groceries'},
-    {id:6, description: 'fff', price: 10, quantity:13, category: 'Entertainment'},
+    {id:6, description: 'fff', price: 200, quantity:13, category: 'Entertainment'},
     {id:4, description: 'ddd', price: 10, quantity:13, category: 'Utilities'},
     {id:5, description: 'eee', price: 10, quantity:13, category: 'Groceries'},
     {id:7, description: 'ggg', price: 10, quantity:13, category: 'Entertainment'},

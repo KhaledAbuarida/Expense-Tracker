@@ -26,6 +26,7 @@ function ExpenseForm({onSubmit}: Props){
         <form className='mb-3' onSubmit={handleSubmit(data => {
                 onSubmit(data);
                 reset();    
+                console.log(data)
             })}>
             <div className="mb-3">
                 <label htmlFor="description" className="form-label">Description</label>

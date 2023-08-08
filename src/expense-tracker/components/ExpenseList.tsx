@@ -51,7 +51,7 @@ function ExpenseList({Expenses, onDelete}: Props){
             <tfoot>
                 <tr>
                     <th>Total</th>
-                    <th>${Expenses.reduce((acc, item) => item.price + acc , 0)}</th>
+                    <th>${Expenses.reduce((acc, item) => (item.price * item.quantity) + acc , 0)}</th>
                     <th></th>
                     <th></th>
                 </tr>
