@@ -1,3 +1,4 @@
+import { useState } from "react";
 
 interface Expense {
     id: number;
@@ -15,6 +16,10 @@ interface Props {
 
 
 function ExpenseList({Expenses, onDelete}: Props){
+    const [price, setPrice] = useState(0);
+
+
+    
     return(
         <table className="table table-border">
             <thead>
@@ -33,7 +38,7 @@ function ExpenseList({Expenses, onDelete}: Props){
                          <td>{item.category}</td>
                          <td>
                             <button 
-                                className="btn-danger" 
+                                className="btn btn-outline-danger" 
                                 onClick={() => onDelete(item.id)}>
                                     Delete
                             </button>
@@ -41,6 +46,14 @@ function ExpenseList({Expenses, onDelete}: Props){
                     </tr>
                 )}
             </tbody>
+            <tfoot>
+                <tr>
+                    <th>Total</th>
+                    <th>${Expenses.reduce((acc, item) => item.amount + acc , 0)}</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </tfoot>
         </table>
     )
 }
