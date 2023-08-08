@@ -1,4 +1,4 @@
-import { ExpensesCategories } from '../../App'
+import ExpensesCategories from "./categories";
 interface Props {
     onSelectCategory: (category: string) => void
 }
