@@ -3,7 +3,8 @@ import { useState } from "react";
 interface Expense {
     id: number;
     description: string;
-    amount: number;
+    price: number;
+    quantity: number,
     category: string;
 }
 
@@ -16,7 +17,6 @@ interface Props {
 
 
 function ExpenseList({Expenses, onDelete}: Props){
-    const [price, setPrice] = useState(0);
 
 
     if(Expenses.length == 0) return null
@@ -25,7 +25,8 @@ function ExpenseList({Expenses, onDelete}: Props){
             <thead>
                 <tr>
                     <th>Description</th>
-                    <th>Amount</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
                     <th>Category</th>
                     <th></th>
                 </tr>
@@ -34,7 +35,8 @@ function ExpenseList({Expenses, onDelete}: Props){
                 {Expenses.map(item =>
                     <tr key={item.id}>
                          <td>{item.description}</td>
-                         <td>{item.amount}</td>
+                         <td>{item.price}</td>
+                         <td>{item.quantity}</td>
                          <td>{item.category}</td>
                          <td>
                             <button 
@@ -49,7 +51,7 @@ function ExpenseList({Expenses, onDelete}: Props){
             <tfoot>
                 <tr>
                     <th>Total</th>
-                    <th>${Expenses.reduce((acc, item) => item.amount + acc , 0)}</th>
+                    <th>${Expenses.reduce((acc, item) => item.price + acc , 0)}</th>
                     <th></th>
                     <th></th>
                 </tr>

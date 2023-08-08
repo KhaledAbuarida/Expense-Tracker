@@ -1,4 +1,4 @@
 
-const ExpensesCategories = ['Groceries', 'Utilities', 'Entertainment'] as const;
+const categories = ['Groceries', 'Utilities', 'Entertainment'] as const;
 
-export default ExpensesCategories;
+export default categories;
